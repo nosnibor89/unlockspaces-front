@@ -20,7 +20,7 @@
     position: absolute;
     top: 50%;
     color: $us__green;
-    font-size: 16px;
+    font-size: 30px;
     &.right-control{
         right: -1em;
         transition: transform 500ms;
@@ -39,10 +39,10 @@
 .visible-arrows{
     .right-control{
         transition: transform 500ms;
-        transform: translate(-3em);
+        transform: translate(-2em);
     }
     .left-control{
         transition: transform 500ms;
-        transform: translate(3em);
+        transform: translate(2em);
     }
 }
