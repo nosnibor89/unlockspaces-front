@@ -4,8 +4,15 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 /*US Externals*/
+// #Reset 
 @import "structures/reset";
+
+// Variables
 @import "variables/colors";
+
+// Custom and directives
+@import "structures/carousel";
+@import "structures/space-box";
 
 
 /* US Header*/
@@ -22,12 +29,20 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
+.us-logo{
+  span{
+    &:hover{
+      color: $us__green !important;
+    }
+  }
+}
+
 .us-menu {
   >li {
     >a {
       &:hover,
-      focus {
-        color: $USGreen !important;
+      :focus {
+        color: $us__green !important;
       }
     }
   }
@@ -36,13 +51,13 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 /* US Mix */
 .us-navbar,
 .footer {
-  background: $USWhite;
+  background: $us__white;
 }
 
 /* US footer */
 .footer {
   padding: 0.5em 0;
-  background-color: $USGray;
+  background-color: $us__gray;
   color: #fff;
   a{
     color: #fff;
@@ -51,7 +66,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
     text-align: center;
     margin-top: 0.5em;
     span{
-      color: $USGreen;
+      color: $us__green;
     }
   }
 }

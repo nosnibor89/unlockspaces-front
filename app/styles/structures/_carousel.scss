@@ -1,0 +1,48 @@
+/* Carousel Styles*/
+.us-carousel-container img{
+    width: 100%;
+    max-width: 100%;
+}
+
+.us-carousel-indicators {
+    li{
+        margin: 0 1%;
+        background: $us__green;
+        border: none;
+        &.active{
+            margin: 0 1%;
+            background: $us__green;
+        }
+    }
+}
+
+.us-carousel-control{
+    position: absolute;
+    top: 50%;
+    color: $us__green;
+    font-size: 16px;
+    &.right-control{
+        right: -1em;
+        transition: transform 500ms;
+        transform: translate(1em);
+    }
+    &.left-control{
+        left: -1em;
+        transition: transform 500ms;
+        transform: translate(-1em);
+    }
+    &:hover,&:focus,&:visited{
+        color: $us__green !important;
+    }
+}
+
+.visible-arrows{
+    .right-control{
+        transition: transform 500ms;
+        transform: translate(-3em);
+    }
+    .left-control{
+        transition: transform 500ms;
+        transform: translate(3em);
+    }
+}

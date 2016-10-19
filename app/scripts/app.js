@@ -12,21 +12,17 @@ angular
   .module('unlockspacesFrontApp', [
     'ngAnimate',
     'ngResource',
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
   ])
-  .config(function ($routeProvider) {
+  .config(["$routeProvider",function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'main'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
       .otherwise({
-        redirectTo: '/'
+          redirectTo: '/'
       });
-  });
+  }]);
