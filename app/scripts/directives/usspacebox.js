@@ -1,13 +1,14 @@
-'use strict';
+(function () {
+  'use strict';
 
-/**
- * @ngdoc directive
- * @name unlockspacesFrontApp.directive:usSpaceBox
- * @description
- * # Directive for Space Box with Slider.
- */
-angular.module('unlockspacesFrontApp')
-  .directive('usSpaceBox', function () {
+  /**
+   * @ngdoc directive
+   * @name unlockspacesFrontApp.directive:usSpaceBox
+   * @description
+   * # Directive for Space Box with Slider.
+   */
+
+  function usSpaceBox() {
     return {
       replace: true,
       templateUrl: 'views/templates/us-space-box.html',
@@ -30,4 +31,8 @@ angular.module('unlockspacesFrontApp')
         scope.visibleArrows = false;
       }
     };
-  });
+  }
+
+  angular.module('unlockspacesFrontApp')
+    .directive('usSpaceBox', usSpaceBox);
+})();

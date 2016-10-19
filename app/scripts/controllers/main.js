@@ -1,37 +1,35 @@
-(function(){
+(function () {
   'use strict';
 
-/**
- * @ngdoc function
- * @name unlockspacesFrontApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the unlockspacesFrontApp, 
- * control behavior of the main page, like pagination, 
- * databinding, etc.
- */
-var MainCtrl = function($scope){
-  
-  var slides = $scope.slides = [];
-  var currIndex = 0;
+  /**
+   * @ngdoc function
+   * @name unlockspacesFrontApp.controller:MainCtrl
+   * @description
+   * # MainCtrl
+   * Controller of the unlockspacesFrontApp, 
+   * control behavior of the main page, like pagination, 
+   * databinding, etc.
+   */
+  function MainCtrl($scope, usData) {
 
-  $scope.addSlide = function() {
-    var newWidth = 600 + slides.length + 1;
-    slides.push({
-      id: currIndex++
-    });
+    /**
+     * Place spaces in scope once the object are succesfully returned
+     * 
+     * @param {any} data
+     */
+    function onSpacesSuccess(data) {
+      $scope.spaces = data;
+    }
+
+    function onSpacesError(data){
+
+    }
+
+    //Get spaces from the API
+    usData.space.query(null, onSpacesSuccess, onSpacesError);
   };
 
-  for (var i = 0; i < 4; i++) {
-    $scope.addSlide();
-  }
-
-  
-};
-
-
-
-angular.module('unlockspacesFrontApp')
-  .controller("MainCtrl",["$scope",MainCtrl]);
+  angular.module('unlockspacesFrontApp')
+    .controller("MainCtrl", ["$scope", "usData", MainCtrl]);
 
 })();

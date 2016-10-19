@@ -15,7 +15,22 @@ angular
     'ngRoute',
     'ui.bootstrap'
   ])
-  .config(["$routeProvider",function ($routeProvider) {
+  /** 
+   * @description
+   * Constants for the application.
+   * Note: For testing purposes the BASEURL is the only url provided
+   */
+  .constant("CONFIG", {
+    "WEBAPI": {
+      "BASEURL": "https://unlockspaces.com/api/search/findspaces/searchVenuesLatLongTimeRange/-33.4318181/-70.6203973/13954/2016-7-25-0-0/Cualquiera/1"
+    }
+  })
+  /**
+   * @params Angular NgRoute Service Object
+   * @description
+   * SPA routing setup
+   */
+  .config(["$routeProvider", function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -23,6 +38,6 @@ angular
         controllerAs: 'main'
       })
       .otherwise({
-          redirectTo: '/'
+        redirectTo: '/'
       });
   }]);
