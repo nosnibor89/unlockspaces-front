@@ -1,0 +1,21 @@
+<a href="#" class="space-container clearfix" ng-class="{'visible-arrows' : visibleArrows}" ng-mouseenter="visibleArrows = true"
+	ng-mouseleave="visibleArrows = false">
+	<div uib-carousel active="active" interval="interval" no-wrap="noWrapSlides" template-url="views/templates/us-carousel.html">
+		<div uib-slide ng-repeat="slide in images track by $index" index="$index">
+			<!--Hardcoded URL for testing purposes-->
+			<img src="http://placehold.it/300x200.png&text={{$index + 1}}">
+		</div>
+	</div>
+	<div class="space-description clearfix">
+		<div class="info">
+			<p class="title">{{title}}</p>
+			<p class="detail">{{email}}</p>
+			<p class="detail">{{phone}}</p>
+		</div>
+		<div class="price">
+			<span>{{price | currency}}</span>
+			<small>Per Hour</small>
+		</div>
+	</div>
+	<p class="status" ng-show="available">Available</p>
+</a>

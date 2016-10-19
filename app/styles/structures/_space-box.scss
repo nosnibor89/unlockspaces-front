@@ -1,0 +1,72 @@
+/* Space Box Container*/
+
+.space-container {
+    margin: 4%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: -1px 1px 1px 0px rgba(0, 0, 0, 0.65);
+    position: relative;
+    display: block;
+    color: $us_black_font;
+    &:hover,
+    &:focus,
+    &:visited {
+        color: $us_black_font !important;
+    }
+    .status {
+        background: $us__green;
+        color: $us__white;
+        padding: 0.2em;
+        position: absolute;
+        top: 1em;
+        left: 1em;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+}
+
+.space-description {
+    padding: 0.5em;
+    .info {
+        width: 60%;
+        float: left;
+        font-size: 10px;
+        p {
+            margin-bottom: 5px;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+    }
+    .price {
+        width: 40%;
+        float: left;
+        text-align: center;
+        span {
+            display: block;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+}
+
+
+/* Responsive: Portrait tablets and up */
+
+@media screen and (min-width: 768px) {
+    .space-container {
+        width: 40%;
+        float: left;
+    }
+    .space-description {
+        padding: 0.5em 1em;
+        .info {
+            width: 70%;
+        }
+        .price {
+            width: 30%;
+        }
+    }
+}
