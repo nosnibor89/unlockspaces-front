@@ -3,7 +3,7 @@
 	<strong>{{error}}</strong>
 </div>
 <div class="container">
-	<div ng-show="main.viewSpaces">
+	<div ng-show="main.viewSpaces" class="clearfix" ng-class="{tall: main.viewSpaces.length < 3}">
 		<us-space-box ng-cloak ng-repeat="space in main.viewSpaces track by $index" images="space.photos" price="16" title="{{space.overview.title}}"
 			email="{{space.contactInfo.email}}" phone="{{space.contactInfo.phone}}" on-detail="main.getDetails(ev,space.id)">
 		</us-space-box>
