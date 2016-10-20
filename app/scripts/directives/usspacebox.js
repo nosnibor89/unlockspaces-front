@@ -14,15 +14,15 @@
       templateUrl: 'views/templates/us-space-box.html',
       restrict: 'E',
       scope: {
-        images: "=",
-        price: "@",
-        title: "@",
-        phone: "@",
-        email: "@",
-        // available: "=",
-        detail: "&onDetail"
+        images: '=',
+        price: '@',
+        title: '@',
+        phone: '@',
+        email: '@',
+        // available: '=',
+        detail: '&onDetail'
       },
-      link: function postLink(scope, element, attrs) {
+      link: function postLink(scope) {
 
         //Directives - Carousel config
         scope.interval = 3000;

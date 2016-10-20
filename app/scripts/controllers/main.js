@@ -27,23 +27,23 @@
       $scope.t = data;
       main.totalItems = main.spaces.length;
       main.viewSpaces = usSpacePager.getPageItems(main.currentPage, main.perPage, main.spaces);
-    };
+    }
 
     /**
      * Show error to the user
      * 
      * @param {any} data
      */
-    function onSpacesError(data) {
-      $scope.error = "Spaces could not be loaded!";
-    };
+    function onSpacesError() {
+      $scope.error = 'Spaces could not be loaded!';
+    }
 
     /**
      * Handler function that handles when page is change.
      */
     function pageChanged() {
       main.viewSpaces = usSpacePager.getPageItems(main.currentPage, main.perPage, main.spaces);
-    };
+    }
 
     /**
      * Get Details of a single space from all the spaces.
@@ -59,17 +59,17 @@
       $scope.detailModal = $uibModal.open({
         templateUrl: 'views/templates/detail.html',
         controller: 'MainCtrl',
-        size: "md",
+        size: 'md',
         scope: $scope
       });
-    };
+    }
 
     /**
      * Helper that allows to close modal intance 
      */
     function closeModal() {
       $scope.detailModal.dismiss();
-    };
+    }
 
     //Binding members
     main.getDetails = getDetails;
@@ -79,9 +79,9 @@
     //Get spaces from the API
     usData.space.query(null, onSpacesSuccess, onSpacesError);
 
-  };
+  }
 
   angular.module('unlockspacesFrontApp')
-    .controller("MainCtrl", ["$scope", "$filter", "$uibModal", "usData", "usSpacePager", MainCtrl]);
+    .controller('MainCtrl', ['$scope', '$filter', '$uibModal', 'usData', 'usSpacePager', MainCtrl]);
 
 })();

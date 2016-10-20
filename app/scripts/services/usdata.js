@@ -20,6 +20,6 @@
   }
 
   angular.module('unlockspacesFrontApp')
-    .factory('usData', ["$resource", "CONFIG", usData]);
+    .factory('usData', ['$resource', 'CONFIG', usData]);
 
 })();

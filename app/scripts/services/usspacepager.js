@@ -8,8 +8,7 @@
    * # usSpacePager
    * Factory in the unlockspacesFrontApp.
    */
-  angular.module('unlockspacesFrontApp')
-    .factory('usSpacePager', function () {
+  function usSpacePager() {
       // Service logic
       function getPageItems(currentPage, maxPage, items) {
         var pageItems,
@@ -18,12 +17,14 @@
           endIndex = Math.min(startIndex + maxPage - 1, totalItems - 1);
         pageItems = items.slice(startIndex, endIndex + 1);
         return pageItems;
-      };
+      }
 
       // Public API here
       var service = {
         getPageItems: getPageItems
       };
       return service;
-    });
+    }
+  angular.module('unlockspacesFrontApp')
+    .factory('usSpacePager', [usSpacePager]);
 })();
