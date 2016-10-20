@@ -1,5 +1,5 @@
-<a href="#" class="space-container clearfix" ng-class="{'visible-arrows' : visibleArrows}" ng-mouseenter="visibleArrows = true"
-	ng-mouseleave="visibleArrows = false">
+<div class="space-container clearfix" ng-class="{'visible-arrows' : visibleArrows}" ng-mouseenter="visibleArrows = true"
+	ng-mouseleave="visibleArrows = false" ng-click="detail({ev: $event})">
 	<div uib-carousel active="active" interval="interval" no-wrap="noWrapSlides" template-url="views/templates/us-carousel.html">
 		<div uib-slide ng-repeat="slide in images track by $index" index="$index">
 			<!--Hardcoded URL for testing purposes-->
@@ -19,5 +19,6 @@
 			<small>Per Hour</small>
 		</div>
 	</div>
-	<p class="status" ng-show="available">Available</p>
-</a>
+	<!--<p class="status" ng-show="available">Available</p>-->
+
+</div>

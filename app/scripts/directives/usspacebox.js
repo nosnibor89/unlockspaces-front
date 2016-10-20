@@ -19,7 +19,8 @@
         title: "@",
         phone: "@",
         email: "@",
-        available: "="
+        // available: "=",
+        detail: "&onDetail"
       },
       link: function postLink(scope, element, attrs) {
 
@@ -34,5 +35,5 @@
   }
 
   angular.module('unlockspacesFrontApp')
-    .directive('usSpaceBox', usSpaceBox);
+    .directive('usSpaceBox', [usSpaceBox]);
 })();

@@ -1,0 +1,29 @@
+<div class="modal-header us-modal-header">
+	<button type="button" class="close" data-dismiss="modal" ng-click="closeModal()" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<h3 class="modal-title">Space Details</h3>
+</div>
+<div class="modal-body">
+
+	<div class="modal-info">
+		<div ng-show="space.overview.title" class="item">{{space.overview.title}}</div>
+		<div ng-show="space.contactInfo.email" class="item">{{space.contactInfo.email}}</div>
+		<div ng-show="space.contactInfo.phone" class="item">{{space.contactInfo.phone}}</div>
+		<a ng-show="space.contactInfo.website" ng-href="http://{{space.contactInfo.website}}" target="_blank">
+			<span class="fa fa-globe"></span>
+			<p class="web">{{space.contactInfo.website}}</p>
+		</a>
+		<div ng-show="space.address.line1" class="address">
+			<h5>Address</h5>
+			<p>{{space.address.line1}}</p>
+			<p>{{space.address.postalCode}}</p>
+		</div>
+	</div>
+
+
+	<div ng-show="space.amenitiesAvailable.length > 0" class="modal-amenities clearfix">
+		<h3>Amenities</h3>
+		<div ng-repeat="amenity in space.amenitiesAvailable" class="item" tooltip-placement="top" uib-tooltip="{{amenity.details}}">
+			<span class="{{amenity.icon}}"></span>
+		</div>
+	</div>
+</div>

@@ -1,10 +1,16 @@
-<div class="container" ng-show="main.viewSpaces">
-  <us-space-box ng-cloak ng-repeat="space in main.viewSpaces" images="space.photos" price="16" title="{{space.overview.title}}" email="{{space.contactInfo.email}}" phone="{{space.contactInfo.phone}}" available="true" >
-  </us-space-box>
-
-  <div class="text-center" ng-show="main.totalItems">
-    <ul ng-cloak uib-pagination total-items="main.totalItems" items-per-page="main.perPage" ng-model="main.currentPage" ng-change="pageChanged()" class="pagination-sm us-pagination "
-    boundary-link-numbers="true" previous-text="&lsaquo;" next-text="&rsaquo;" rotate="false"></ul>  
-  </div>
+<div ng-show="error" ng-cloak class="alert alert-danger" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	<strong>{{error}}</strong>
 </div>
+<div class="container">
+	<div ng-show="main.viewSpaces">
+		<us-space-box ng-cloak ng-repeat="space in main.viewSpaces track by $index" images="space.photos" price="16" title="{{space.overview.title}}"
+			email="{{space.contactInfo.email}}" phone="{{space.contactInfo.phone}}" on-detail="main.getDetails(ev,space.id)">
+		</us-space-box>
 
+		<div class="text-center" ng-show="main.totalItems">
+			<ul ng-cloak uib-pagination total-items="main.totalItems" items-per-page="main.perPage" ng-model="main.currentPage" ng-change="pageChanged()"
+				class="pagination-sm us-pagination " boundary-link-numbers="true" previous-text="&lsaquo;" next-text="&rsaquo;" rotate="false"></ul>
+		</div>
+	</div>
+</div>

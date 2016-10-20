@@ -5,13 +5,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 /*US Externals*/
 
-// #Reset 
+// Reset 
 @import "structures/reset";
 // Variables
 @import "variables/colors";
-// Custom and directives
+// Custom emplates
 @import "structures/carousel";
 @import "structures/space-box";
+@import "structures/detail";
 
 /* US Header*/
 
@@ -47,6 +48,10 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   }
 }
 
+.us-navbar {
+  margin-bottom: 0;
+}
+
 
 /* US Mix */
 
@@ -69,16 +74,29 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
   border-color: $us__green;
 }
 
-.pagination > li > a, 
-.pagination > li > span, 
+.pagination>li>a,
+.pagination>li>span,
 .pagination>li>a:hover,
 .pagination>li>a:focus,
 .pagination>li>span:hover,
-.pagination>li>span:focus{
-    color: $us__black__font;
-    background-color: $us__white;
-    border-color: #ddd;
+.pagination>li>span:focus {
+  color: $us__black__font;
+  background-color: $us__white;
+  border-color: #ddd;
 }
+
+.alert-danger {
+  border-radius: 0;
+  background-color: #e44b23;
+  color: white;
+  .close {
+    font-weight: bold;
+    color: white;
+    opacity: 0.7;
+  }
+}
+
+
 /* US footer */
 
 .footer {

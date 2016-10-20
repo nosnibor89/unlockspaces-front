@@ -1,0 +1,48 @@
+.us-modal-header{
+    background: $us__green;
+    color: $us__white;
+    text-align: center;
+    .close{
+        color: $us__white;
+        opacity: 0.7;
+    }
+}
+
+.modal-info{
+    .web{
+        display: inline-block;
+    }
+    .item{
+        margin: 5px 0;
+        &:first-child{
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+
+    .address{
+        h5{
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        p{
+            margin-bottom: 5px;
+        }
+    }
+}
+
+
+
+.modal-amenities{
+    h3{
+        text-align: center;
+        margin-top: 10px;
+        width: 100%;
+        border-bottom: solid 1px lightgrey;
+    }
+    .item{
+        font-size: 26px;
+        float: left;
+        margin: 2%;
+    }
+}

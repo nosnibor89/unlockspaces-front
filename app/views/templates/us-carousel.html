@@ -1,17 +1,17 @@
 <div class="carousel-inner us-carousel-container" ng-transclude>
 </div>
-<a role="button" href class="left-control us-carousel-control" ng-click="prev()" ng-class="{ disabled: isPrevDisabled() }"
+<a role="button" href class="left-control us-carousel-control" ng-click="$event.stopPropagation(); prev()" ng-class="{ disabled: isPrevDisabled() }"
 	ng-show="slides.length > 1">
 	<span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
 	<span class="sr-only">previous</span>
 </a>
-<a role="button" href class="right-control us-carousel-control" ng-click="next()" ng-class="{ disabled: isNextDisabled() }"
+<a role="button" href class="right-control us-carousel-control" ng-click="$event.stopPropagation(); next()" ng-class="{ disabled: isNextDisabled() }"
 	ng-show="slides.length > 1">
 	<span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
 	<span class="sr-only">next</span>
 </a>
 <ol class="carousel-indicators us-carousel-indicators" ng-show="slides.length > 1">
-	<li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="select(slide)">
+	<li ng-repeat="slide in slides | orderBy:indexOfSlide track by $index" ng-class="{ active: isActive(slide) }" ng-click="$event.stopPropagation();select(slide)">
 		<span class="sr-only">slide {{ $index + 1 }} of {{ slides.length }}<span ng-if="isActive(slide)">, currently active</span></span>
 	</li>
 </ol>
