@@ -12,9 +12,4 @@ describe('Directive: usSpaceBox', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<us-space-box></us-space-box>');
-    element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the usSpaceBox directive');
-  }));
 });
